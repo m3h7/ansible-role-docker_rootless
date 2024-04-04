@@ -1,4 +1,4 @@
-# Role Name
+# Role docker_rootless
 
 Installs Docker to run in rootless mode.
 
