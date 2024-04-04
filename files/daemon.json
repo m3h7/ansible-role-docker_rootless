@@ -1,0 +1,5 @@
+{
+  "log-driver": "json-file",
+  "log-opts": { "max-size": "20m", "max-file": "10" },
+  "default-address-pools": [{ "base": "172.17.0.0/16", "size": 24 }]
+}

@@ -1,0 +1,9 @@
+---
+- name: Restart Docker Service
+  become_user: "{{ fact_docker_rootless_user.name }}"
+  ansible.builtin.systemd_service:
+    name: docker
+    scope: user
+    state: restarted
+    enabled: true
+    daemon_reload: true

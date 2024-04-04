@@ -1,0 +1,3 @@
+---
+# Name of user to use Docker, user must exist.
+docker_rootless_user: "user"

@@ -1,0 +1,20 @@
+galaxy_info:
+  role_name: docker_rootless
+  namespace: m3h7
+  author: mahiso
+  description: Installs Docker to run in rootless mode
+
+  license: MIT
+
+  min_ansible_version: "2.14"
+
+  platforms:
+    - name: Debian
+      versions:
+        - bookworm
+
+  galaxy_tags:
+    - docker
+    - rootless
+
+dependencies: []
