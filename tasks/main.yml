@@ -33,13 +33,16 @@
     state: present
 
 - name: Install Dockers official GPG key
-  ansible.builtin.apt_key:
+  ansible.builtin.get_url:
     url: https://download.docker.com/linux/debian/gpg
-    keyring: /etc/apt/trusted.gpg.d/docker.gpg
+    dest: /etc/apt/keyrings/docker.asc
+    owner: root
+    group: root
+    mode: "0444"
 
 - name: Add Docker's repo
   ansible.builtin.apt_repository:
-    repo: "deb [arch=amd64] https://download.docker.com/linux/debian {{ ansible_facts.distribution_release }} stable"
+    repo: "deb [arch=amd64 signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian {{ ansible_facts.distribution_release }} stable"
 
 - name: Install Docker
   ansible.builtin.apt:
