@@ -4,7 +4,7 @@ Installs Docker to run in rootless mode.
 
 ## Requirements
 
-This role requires Ansible 2.9 or higher.
+This role requires Ansible 2.14 or higher.
 
 ## Role Variables
 
