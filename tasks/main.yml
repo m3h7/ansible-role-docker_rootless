@@ -32,6 +32,14 @@
     update_cache: true
     state: present
 
+- name: Ensure keyrings dir extists
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
 - name: Install Dockers official GPG key
   ansible.builtin.get_url:
     url: https://download.docker.com/linux/debian/gpg
